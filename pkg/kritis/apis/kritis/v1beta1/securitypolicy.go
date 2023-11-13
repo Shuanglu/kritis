@@ -37,6 +37,7 @@ type ImageSecurityPolicySpec struct {
 	PackageVulnerabilityRequirements PackageVulnerabilityRequirements `json:"packageVulnerabilityRequirements"`
 	AttestationAuthorityName         string                           `json:"attestationAuthorityName"`
 	PrivateKeySecretName             string                           `json:"privateKeySecretName"`
+	BuiltProjectIDs       []string `json:"builtProjectIDs"`
 }
 
 // PackageVulnerabilityRequirements is the requirements for package vulnz for an ImageSecurityPolicy
@@ -46,6 +47,7 @@ type PackageVulnerabilityRequirements struct {
 	// CVE's without fixes.
 	MaximumFixUnavailableSeverity string   `json:"maximumFixUnavailableSeverity"`
 	AllowlistCVEs                 []string `json:"allowlistCVEs"`
+	
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
